@@ -1,0 +1,2 @@
+def kyu(test):
+  pass
