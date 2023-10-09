@@ -13,3 +13,9 @@ def accum(s):
             mumb += e + (e.lower())*i + "-" 
         i += 1
     return mumb[:-1] #remove last character "-"
+
+def accum(s):
+    return '-'.join(c.upper() + c.lower() * i for i, c in enumerate(s)) #enumerate() is like a dictionarry we can get inexes and values
+
+
+
