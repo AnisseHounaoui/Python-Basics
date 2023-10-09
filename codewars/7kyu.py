@@ -30,3 +30,18 @@ def number(bus_stops):
 def number(bus_stops): #best
     return sum([stop[0] - stop[1] for stop in bus_stops])
 
+#In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+# example high_and_low("1 2 3 4 5")  # return "5 1"
+
+def high_and_low(numbers):
+    arr = numbers.split(" ")
+    arr_int = list(map(int,arr))
+    return str(max(arr_int)) + " " + str(min(arr_int))
+
+def high_and_low(numbers):
+    nums = sorted(numbers.split(), key=int)
+    return '{} {}'.format(nums[-1], nums[0])
+
+
+
+
