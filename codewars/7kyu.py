@@ -43,5 +43,26 @@ def high_and_low(numbers):
     return '{} {}'.format(nums[-1], nums[0])
 
 
+#You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+#The string has a length greater or equal to one and contains only letters from ato z.
+#Examples:
+#s="aaabbbbhaijjjm"
+#printer_error(s) => "0/14"
+#s="aaaxbbbbyyhwawiwjjjwwm"
+#printer_error(s) => "8/22"
+
+def printer_error(s):
+    error = 0
+    for e in s:
+        if e not in "abcdefghijklm":
+            error += 1
+    return str(error) + "/" + str(len(s))
+
+def printer_error(s): #good
+    return "{}/{}".format(len([x for x in s if x not in "abcdefghijklm"]), len(s))
+
+from re import sub
+def printer_error(s): #better
+    return "{}/{}".format(len(sub("[a-m]",'',s)),len(s))
 
 
