@@ -87,9 +87,19 @@ def square_sum(numbers):
     return sum(num**2 for num in numbers)
 
 
+#Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+#Write a code that gives out the total amount for different days(d).
 
+def rental_car_cost(d):
+    t = d * 40
+    if 3 <= d < 7:
+        t -= 20
+    elif  d >= 7:
+        t -= 50
+    return t
 
-
+def rental_car_cost(d): #BEST
+  return d * 40 - (d > 2) * 20 - (d > 6) * 30
 
 
 
