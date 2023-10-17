@@ -11,3 +11,15 @@ def find_it(seq):
 def find_it(seq):
     return [x for x in seq if seq.count(x) % 2][0]
 
+
+#Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements 
+#with the same value next to each other and preserving the original order of elements.
+#unique_in_order('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+#unique_in_order('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+
+def unique_in_order(sequence):
+    unique_list = []
+    for item in sequence:
+        if not unique_list or item != unique_list[-1]:
+            unique_list.append(item)
+    return unique_list
